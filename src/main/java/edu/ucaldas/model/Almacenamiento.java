@@ -9,7 +9,7 @@ import edu.ucaldas.repository.ProductoJSON;
 import edu.ucaldas.repository.ProveedorJSON;
 
 public class Almacenamiento {
-    private IleerJSON<Proveedor> provedoresJson = new ProveedorJSON();
+    private IleerJSON<Proveedor> proveedoresJson = new ProveedorJSON();
     private IleerJSON<Producto> productosJson = new ProductoJSON();
     private List<Producto> regalos = new ArrayList<Producto>();
 
@@ -17,7 +17,7 @@ public class Almacenamiento {
 
         try {
             for (Producto producto : productosJson.cargarDatos()) {
-                for (Proveedor proveedor : provedoresJson.cargarDatos()) {
+                for (Proveedor proveedor : proveedoresJson.cargarDatos()) {
                     if (producto.getProveedor().equals(proveedor.getNombre())) {
                         Producto nuevoRegalo = new Producto(
                                 producto.getNombre(), producto.getEdad(), producto.getPrecioBase(),
